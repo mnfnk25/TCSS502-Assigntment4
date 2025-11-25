@@ -41,14 +41,16 @@ class Shape(ABC):
         print(self.__str__())
 
 class Circle(Shape):
-    def __init__(self, radius):
-        Shape.__init__(self, "Circle")
-        self.radius = radius
+    def __init__(self, radius): #initialize the instance
+        Shape.__init__(self, "Circle") #initialize the shape instance
+        self.radius = radius # pass the radius to a variable to use it in the area and perimeter methods
 
+    # the area of a circle is pi * radius^2
     def area(self):
         circle_area = math.pi * self.radius * self.radius
         return circle_area
 
+    # the perimeter of a circle is 2pi * radius
     def perimeter(self):
         circle_perimeter = 2 * math.pi * self.radius
         return circle_perimeter
@@ -59,11 +61,13 @@ class Square(Shape):
         Shape.__init__(self, "Square")
         self.side = side
 
+    # the area of a square is side^2
     def area(self):
 
         square_area = self.side * self.side
         return square_area
     
+    # the perimeter of a square is side1 + side2 + side3 + side4
     def perimeter(self):
 
         square_perimeter = 4 * self.side
@@ -76,11 +80,13 @@ class Rectangle(Shape):
         self.length = length
         self.width = width
 
+    # the area of a rectangle is length * width
     def area(self):
 
         rectangle_area = self.length * self.width
         return rectangle_area
     
+    # the perimeter of a rectangle is 2(length + width)
     def perimeter(self):
 
         rectangle_perimeter = (2 * self.length) + (2 * self.width)
@@ -98,11 +104,13 @@ class Triangle(Shape):
         self.base = base
         self.height = height
 
+    # the area of a triangle is 1/2 * base * height
     def area(self):
 
         triangle_area = 0.5 * self.base * self.height
         return triangle_area
     
+    # the perimeter of a triangle is the sum of its sides (a + b + c)
     def perimeter(self):
 
         triangle_perimeter = self.sidea + self.sideb + self.sidec
