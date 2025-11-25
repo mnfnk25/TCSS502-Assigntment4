@@ -7,7 +7,7 @@ import math # we will need that pie
 
 # Importing all the classes and methods we are going to test
 from shapes import Circle,  Square, Rectangle, Triangle
-from shape_factory import ShapeFactory
+from ShapeFactory import ShapeFactory
 from drawing_program import DrawingProgram
 from drawing_program_iterator import DrawingProgramIterator
 
@@ -58,24 +58,20 @@ of that same shape.
 
 class TestShapeFactory(unittest.TestCase):
     def test_circle(self):
-        circle = ShapeFactory.create_shape("Circle", 5)
+        circle = ShapeFactory.create_circle(5)
         self.assertIsInstance(circle, Circle)
 
     def test_square(self):
-        square = ShapeFactory.create_shape("Square", 5)
+        square = ShapeFactory.create_square(5)
         self.assertIsInstance(square, Square)
 
     def test_rectangle(self):
-        rectangle = ShapeFactory.create_shape("Rectangle", 5, 10)
+        rectangle = ShapeFactory.create_rectangle(5, 10)
         self.assertIsInstance(rectangle, Rectangle)
 
     def test_trianlgle(self):
-        triangle = ShapeFactory.create_shape("Triangle", 10, 10, 20, 15, 20)
+        triangle = ShapeFactory.create_triangle(10, 10, 20, 15, 20)
         self.assertIsInstance(triangle, Triangle)
-
-    def test_mystery_shape(self):
-        mystery_shape = ShapeFactory.create_shape("Polygon", 5)
-        self.assertIsNone(mystery_shape)
 
 """ 
 Now we'll test the DrawingProgram class and methods. 
