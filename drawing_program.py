@@ -4,7 +4,7 @@ access shapes. It also has an iterator class to loop through the shapes in the l
 
 """
 
-from shape_factory import ShapeFactory
+from ShapeFactory import ShapeFactory
 from shapes import Shape
 from drawing_program_iterator import DrawingProgramIterator
 
